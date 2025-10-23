@@ -6,7 +6,7 @@ import static racingcar.common.Constants.READ_TRIAL_COUNT_MESSAGE;
 
 public class ConsoleInputView implements InputView {
     @Override
-    public String readRacingcar() {
+    public String readRacingcars() {
         System.out.println(READ_RACINGCAR_MESSAGE);
         return readLine();
     }

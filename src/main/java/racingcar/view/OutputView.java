@@ -1,7 +1,7 @@
 package racingcar.view;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface OutputView {
-    public void printResult(ArrayList<String> winnerList);
+    public void printResult(List<String> winnerList);
 }
