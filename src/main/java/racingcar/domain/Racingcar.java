@@ -18,4 +18,8 @@ public class Racingcar {
     public String getCarName() {
         return carName;
     }
+
+    public int getMoveCount() {
+        return moveCount;
+    }
 }

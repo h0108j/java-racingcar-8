@@ -21,6 +21,7 @@ public class RacingcarController {
     public void run() {
         Racingcars racingcars = inputRacingcars();
         Race race = createRace(racingcars);
+        race.start();
     }
 
     private Race createRace(Racingcars racingcars) {
