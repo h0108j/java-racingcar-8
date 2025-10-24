@@ -10,6 +10,8 @@ public class Race {
     private final int totalTrialCount;
     private int currentTrialCount;
     private Racingcars racingcars;
+    private WinnerDecider winnerDecider;
+    private List<Racingcar> winnerList;
 
     public Race(int totalTrialCount, Racingcars racingcars) {
         this.totalTrialCount = totalTrialCount;
@@ -20,6 +22,8 @@ public class Race {
 
     public void start() {
         moveRacingcars();
+        winnerDecider = new WinnerDecider(racingcars);
+        winnerList = winnerDecider.getWinner();
     }
 
     private void moveRacingcars() {
@@ -39,5 +43,13 @@ public class Race {
         for (ProgressObserver progressObserver : progressObservers) {
             progressObserver.printProgress(racingcars);
         }
+    }
+
+    public List<String> getWinnerNameList() {
+        List<String> winnerNameList = new ArrayList<>();
+        for (Racingcar racingcar : winnerList) {
+            winnerNameList.add(racingcar.getCarName());
+        }
+        return winnerNameList;
     }
 }

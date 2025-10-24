@@ -22,6 +22,7 @@ public class RacingcarController {
         Race race = createRace(racingcars);
         race.addProgressObserver(progressOutputView);
         race.start();
+        showResult(race.getWinnerNameList());
     }
 
     private Race createRace(Racingcars racingcars) {
