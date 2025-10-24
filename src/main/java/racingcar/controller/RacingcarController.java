@@ -2,25 +2,25 @@ package racingcar.controller;
 
 import racingcar.domain.Race;
 import racingcar.domain.Racingcars;
-import racingcar.view.ConsoleInputView;
-import racingcar.view.ConsoleOutputView;
-import racingcar.view.InputView;
-import racingcar.view.OutputView;
+import racingcar.view.*;
 
 import java.util.List;
 
 public class RacingcarController {
     private final InputView inputView;
     private final OutputView outputView;
+    private final ProgressOutputView progressOutputView;
 
     public RacingcarController() {
         this.inputView = new ConsoleInputView();
         this.outputView = new ConsoleOutputView();
+        this.progressOutputView = new ProgressOutputView();
     }
 
     public void run() {
         Racingcars racingcars = inputRacingcars();
         Race race = createRace(racingcars);
+        race.addProgressObserver(progressOutputView);
         race.start();
     }
 

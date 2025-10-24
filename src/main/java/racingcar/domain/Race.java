@@ -1,6 +1,12 @@
 package racingcar.domain;
 
+import racingcar.view.ProgressObserver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Race {
+    private List<ProgressObserver> progressObservers;
     private final int totalTrialCount;
     private int currentTrialCount;
     private Racingcars racingcars;
@@ -8,6 +14,7 @@ public class Race {
     public Race(int totalTrialCount, Racingcars racingcars) {
         this.totalTrialCount = totalTrialCount;
         this.racingcars = racingcars;
+        this.progressObservers = new ArrayList<>();
         this.currentTrialCount = 0;
     }
 
@@ -19,12 +26,18 @@ public class Race {
         RandomMove randomMove = new RandomMove(racingcars);
         while (currentTrialCount < totalTrialCount) {
             randomMove.doTrial();
-            showProgress();
+            updateProgress();
             currentTrialCount++;
         }
     }
 
-    private void showProgress() {
+    public void addProgressObserver(ProgressObserver progressObserver) {
+        progressObservers.add(progressObserver);
+    }
 
+    private void updateProgress() {
+        for (ProgressObserver progressObserver : progressObservers) {
+            progressObserver.printProgress(racingcars);
+        }
     }
 }
