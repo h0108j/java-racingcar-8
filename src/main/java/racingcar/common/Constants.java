@@ -9,4 +9,6 @@ public class Constants {
             = "시도할 횟수는 몇 회인가요?";
     public static final String OUTPUT_PRINT_MESSAGE
             = "최종 우승자 : ";
+    public static final int MAXIMUM_RACINGCAR_NAME_LENGTH = 5;
+    public static final int STARTING_POINT = 0;
 }
