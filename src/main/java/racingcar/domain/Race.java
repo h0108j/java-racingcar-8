@@ -32,6 +32,7 @@ public class Race {
 
     private void moveRacingcars() {
         RandomMove randomMove = new RandomMove(racingcars);
+        readyProgress();
         while (currentTrialCount < totalTrialCount) {
             randomMove.doTrial();
             updateProgress();
@@ -41,6 +42,12 @@ public class Race {
 
     public void addProgressObserver(ProgressObserver progressObserver) {
         progressObservers.add(progressObserver);
+    }
+
+    private void readyProgress() {
+        for (ProgressObserver progressObserver : progressObservers) {
+            progressObserver.readyProgress();
+        }
     }
 
     private void updateProgress() {

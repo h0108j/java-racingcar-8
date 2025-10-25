@@ -5,12 +5,17 @@ import racingcar.domain.Racingcars;
 
 public class ProgressOutputView implements ProgressObserver {
     @Override
+    public void readyProgress() {
+        System.out.println("\n실행 결과");
+    }
+
+    @Override
     public void printProgress(Racingcars racingcars) {
-        System.out.println("실행결과");
         for (Racingcar racingcar : racingcars.getRacingcarList()) {
             System.out.print(racingcar.getCarName() + " : ");
             printMoveCount(racingcar);
         }
+        System.out.println();
     }
 
     private void printMoveCount(Racingcar racingcar) {

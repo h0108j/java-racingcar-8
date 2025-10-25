@@ -25,10 +25,6 @@ public class Racingcars {
         validator.validate(racingcarList);
     }
 
-    public List<String> getRacingcarNameList() {
-        return racingcarNameList;
-    }
-
     public List<Racingcar> getRacingcarList() {
         return racingcarList;
     }
