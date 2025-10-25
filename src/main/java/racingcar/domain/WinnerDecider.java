@@ -16,12 +16,13 @@ public class WinnerDecider {
 
     public List<Racingcar> getWinner() {
         for (Racingcar racingcar : racingcars.getRacingcarList()) {
-            if (maxRecord <= racingcar.getMoveCount()) {
-                maxRecord = racingcar.getMoveCount();
-            }
-        }
-        for (Racingcar racingcar : racingcars.getRacingcarList()) {
-            if (maxRecord == racingcar.getMoveCount()) {
+            int moveCount = racingcar.getMoveCount();
+
+            if (moveCount > maxRecord) {
+                maxRecord = moveCount;
+                winnerList.clear();
+                winnerList.add(racingcar);
+            } else if (moveCount == maxRecord) {
                 winnerList.add(racingcar);
             }
         }
