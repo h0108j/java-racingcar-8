@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.common.Validator.TrialCountValidator;
+import racingcar.common.Validator.Validator;
 import racingcar.view.ProgressObserver;
 
 import java.util.ArrayList;
@@ -12,8 +14,10 @@ public class Race {
     private Racingcars racingcars;
     private WinnerDecider winnerDecider;
     private List<Racingcar> winnerList;
+    private Validator validator = new TrialCountValidator();
 
     public Race(int totalTrialCount, Racingcars racingcars) {
+        validator.validate(totalTrialCount);
         this.totalTrialCount = totalTrialCount;
         this.racingcars = racingcars;
         this.progressObservers = new ArrayList<>();

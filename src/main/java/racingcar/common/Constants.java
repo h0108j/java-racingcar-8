@@ -14,4 +14,6 @@ public class Constants {
     public static final int MAXIMUM_RACINGCAR_NAME_LENGTH = 5;
     public static final int STARTING_POINT = 0;
     public static final int MINIMUM_MOVE_VALUE = 4;
+    public static final int MAXIMUM_RACINGCAR_QUANTITY = 10;
+    public static final int MAXIMUM_TRIAL_COUNT = 1000;
 }
