@@ -11,6 +11,7 @@ public class Constants {
             = "최종 우승자 : ";
     public static final String RACINGCAR_NAME_DELIMITER
             = ",";
+    public static final String RACINGCAR_MOVE_MARK = "-";
     public static final int MAXIMUM_RACINGCAR_NAME_LENGTH = 5;
     public static final int STARTING_POINT = 0;
     public static final int MINIMUM_MOVE_VALUE = 4;
