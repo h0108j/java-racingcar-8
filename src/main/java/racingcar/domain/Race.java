@@ -10,7 +10,6 @@ import java.util.List;
 public class Race {
     private List<ProgressObserver> progressObservers;
     private final int totalTrialCount;
-    private int currentTrialCount;
     private Racingcars racingcars;
     private WinnerDecider winnerDecider;
     private List<Racingcar> winnerList;
@@ -21,7 +20,6 @@ public class Race {
         this.totalTrialCount = totalTrialCount;
         this.racingcars = racingcars;
         this.progressObservers = new ArrayList<>();
-        this.currentTrialCount = 0;
     }
 
     public void start() {
@@ -33,10 +31,9 @@ public class Race {
     private void moveRacingcars() {
         RandomMove randomMove = new RandomMove(racingcars);
         readyProgress();
-        while (currentTrialCount < totalTrialCount) {
+        for (int currentTrialCount = 0; currentTrialCount < totalTrialCount;  currentTrialCount++) {
             randomMove.doTrial();
             updateProgress();
-            currentTrialCount++;
         }
     }
 

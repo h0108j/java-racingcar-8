@@ -7,7 +7,7 @@ import static racingcar.common.Exceptions.TRIAL_COUNT_MUST_BE_POSITIVE_NUMBER;
 public class TrialCountValidator implements Validator<Integer> {
     @Override
     public void validate(Integer trialCount) {
-        //count 횟수 검증
+        validateTrialCount(trialCount);
     }
 
     private void validateTrialCount(int trialCount) {

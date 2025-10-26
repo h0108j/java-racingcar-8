@@ -15,6 +15,11 @@ public class WinnerDecider {
     }
 
     public List<Racingcar> getWinner() {
+        findWinner();
+        return winnerList;
+    }
+
+    private void findWinner() {
         for (Racingcar racingcar : racingcars.getRacingcarList()) {
             int moveCount = racingcar.getMoveCount();
 
@@ -26,6 +31,5 @@ public class WinnerDecider {
                 winnerList.add(racingcar);
             }
         }
-        return winnerList;
     }
 }
