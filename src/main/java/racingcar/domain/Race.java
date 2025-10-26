@@ -11,7 +11,6 @@ public class Race {
     private List<ProgressObserver> progressObservers;
     private final int totalTrialCount;
     private Racingcars racingcars;
-    private WinnerDecider winnerDecider;
     private List<Racingcar> winnerList;
     private Validator validator = new TrialCountValidator();
 
@@ -24,7 +23,7 @@ public class Race {
 
     public void start() {
         moveRacingcars();
-        winnerDecider = new WinnerDecider(racingcars);
+        WinnerDecider winnerDecider = new WinnerDecider(racingcars);
         winnerList = winnerDecider.getWinner();
     }
 
@@ -54,10 +53,8 @@ public class Race {
     }
 
     public List<String> getWinnerNameList() {
-        List<String> winnerNameList = new ArrayList<>();
-        for (Racingcar racingcar : winnerList) {
-            winnerNameList.add(racingcar.getCarName());
-        }
-        return winnerNameList;
+        return winnerList.stream()
+                .map(Racingcar::getCarName)
+                .toList();
     }
 }

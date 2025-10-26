@@ -18,11 +18,10 @@ public class Racingcars {
     }
 
     private void createRacingcarList(String inputRacingcar) {
-        racingcarList = new ArrayList<>();
         racingcarNameList = List.of(inputRacingcar.split(RACINGCAR_NAME_DELIMITER));
-        for (String racingcarName : racingcarNameList) {
-            racingcarList.add(RacingcarFactory.createRacingcar(racingcarName));
-        }
+        racingcarList = racingcarNameList.stream()
+                .map(RacingcarFactory::createRacingcar)
+                .toList();
         validator.validate(racingcarList);
     }
 
