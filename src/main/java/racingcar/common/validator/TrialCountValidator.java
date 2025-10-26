@@ -1,4 +1,4 @@
-package racingcar.common.Validator;
+package racingcar.common.validator;
 
 import static racingcar.common.Constants.MAXIMUM_TRIAL_COUNT;
 import static racingcar.common.Exceptions.OVER_MAXIMUM_TRIAL_COUNT_EXCEPTION;

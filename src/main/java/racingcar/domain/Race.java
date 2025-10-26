@@ -1,7 +1,7 @@
 package racingcar.domain;
 
-import racingcar.common.Validator.TrialCountValidator;
-import racingcar.common.Validator.Validator;
+import racingcar.common.validator.TrialCountValidator;
+import racingcar.common.validator.Validator;
 import racingcar.view.ProgressObserver;
 
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package racingcar.domain;
 
-import racingcar.common.Validator.RacingcarNameValidator;
-import racingcar.common.Validator.Validator;
+import racingcar.common.validator.RacingcarNameValidator;
+import racingcar.common.validator.Validator;
 
 public class RacingcarFactory {
     private static final Validator validator = new RacingcarNameValidator();

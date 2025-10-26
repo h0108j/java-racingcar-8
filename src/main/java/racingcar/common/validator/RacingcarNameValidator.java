@@ -1,4 +1,4 @@
-package racingcar.common.Validator;
+package racingcar.common.validator;
 
 import static racingcar.common.Constants.MAXIMUM_RACINGCAR_NAME_LENGTH;
 import static racingcar.common.Exceptions.EMPTY_RACINGCAR_NAME_EXCEPTION;

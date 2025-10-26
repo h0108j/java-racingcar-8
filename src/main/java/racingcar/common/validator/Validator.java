@@ -1,4 +1,4 @@
-package racingcar.common.Validator;
+package racingcar.common.validator;
 
 public interface Validator<T> {
     void validate(T object);
