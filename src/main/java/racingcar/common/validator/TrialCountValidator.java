@@ -11,7 +11,7 @@ public class TrialCountValidator implements Validator<Integer> {
     }
 
     private void validateTrialCount(int trialCount) {
-        if (trialCount < 0) {
+        if (trialCount <= 0) {
             throw new IllegalArgumentException(TRIAL_COUNT_MUST_BE_POSITIVE_NUMBER);
         } else if (trialCount > MAXIMUM_TRIAL_COUNT) {
             throw new IllegalArgumentException(OVER_MAXIMUM_TRIAL_COUNT_EXCEPTION);

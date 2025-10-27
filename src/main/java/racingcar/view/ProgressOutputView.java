@@ -14,7 +14,7 @@ public class ProgressOutputView implements ProgressObserver {
     @Override
     public void printProgress(Racingcars racingcars) {
         for (Racingcar racingcar : racingcars.getRacingcarList()) {
-            System.out.print(racingcar.getCarName() + " : " + RACINGCAR_MOVE_MARK.repeat(racingcar.getMoveCount()));
+            System.out.println(racingcar.getCarName() + " : " + RACINGCAR_MOVE_MARK.repeat(racingcar.getMoveCount()));
         }
         System.out.println();
     }
